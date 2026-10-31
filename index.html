@@ -1,0 +1,1359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Srishtijit Bhadra · Research and Projects</title>
+<meta name="description" content="Srishtijit Bhadra, Collegiate School, New York, Class of 2027. Research in melanoma survivorship, surgical computer vision, and computational genomics.">
+<meta name="author" content="Srishtijit Bhadra">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F2EDE4">
+<link rel="canonical" href="https://theesmartone.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Srishtijit Bhadra">
+<meta property="og:title" content="Srishtijit Bhadra · Research and Projects">
+<meta property="og:description" content="Research in melanoma survivorship, surgical computer vision, and computational genomics. Collegiate School, New York, Class of 2027.">
+<meta property="og:url" content="https://theesmartone.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2355604A'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23F2EDE4'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap">
+<script>
+  /* Runs before first paint, so content that will fade in is hidden from the start rather
+     than flashing. If the main script never confirms, everything is shown after 2.5s. */
+  (function (d) {
+    var r = d.documentElement;
+    r.classList.add("js");
+    try {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+        r.classList.add("reveal");
+        setTimeout(function () { if (!window.__revealReady) r.classList.remove("reveal"); }, 2500);
+      }
+    } catch (e) {}
+  })(document);
+</script>
+<style>
+/* =====================================================================
+   PALETTE
+   Three inks and nothing else. Secondary text and rules are the
+   charcoal at reduced opacity, so the page never adds a fourth color.
+     paper  #F2EDE4   ink on paper   14.1 : 1
+     ink    #211F1C   ink at 64%      4.7 : 1  (AA for small text)
+     sage   #55604A   sage on paper   5.7 : 1  (AA)
+   ===================================================================== */
+:root{
+  --paper:#F2EDE4;
+  --ink:#211F1C;
+  --sage:#55604A;
+  --ink-80:rgba(33,31,28,.82);
+  --ink-70:rgba(33,31,28,.72);
+  --ink-60:rgba(33,31,28,.64);
+  --ink-40:rgba(33,31,28,.40);
+  --rule:rgba(33,31,28,.14);
+  --rule-strong:rgba(33,31,28,.30);
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --gutter:clamp(1.25rem,5vw,5.5rem);
+  --gap:clamp(1.5rem,2.6vw,2.5rem);
+  --mast:3.5rem;
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+  scroll-behavior:smooth;scroll-padding-top:var(--mast);
+  background-color:var(--paper);
+}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font-family:var(--sans);font-size:1rem;line-height:1.7;font-weight:400;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  background-color:var(--paper);
+  /* a faint paper grain, drawn as SVG noise so it costs no image request */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .13 0 0 0 0 .12 0 0 0 0 .11 .085 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--sage);color:var(--paper)}
+:focus-visible{outline:1px solid var(--sage);outline-offset:4px}
+a{color:inherit;text-decoration:none}
+main:focus{outline:none}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.nw{white-space:nowrap}
+
+.wrap{width:100%;max-width:80rem;margin-inline:auto;padding-inline:var(--gutter)}
+
+.label{
+  font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  line-height:1.5;color:var(--ink-60);
+}
+.label.sage{color:var(--sage)}
+
+/* links inside running text: a hairline that is always there, so a link
+   never depends on hover to be found */
+.ln{
+  background-image:linear-gradient(currentColor,currentColor);
+  background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;
+  padding-bottom:.08em;transition:color .2s var(--ease);
+}
+.ln:hover{color:var(--sage)}
+
+.skip{
+  position:absolute;left:var(--gutter);top:-5rem;z-index:100;
+  background:var(--ink);color:var(--paper);padding:.75rem 1.1rem;
+  font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  transition:top .2s var(--ease);
+}
+.skip:focus{top:.75rem}
+
+/* =====================================================================
+   MASTHEAD
+   Sticky, but quiet: transparent over the title page, then a paper
+   plate with a hairline once there is text underneath it. The name
+   only appears after the large name has scrolled away, so it is never
+   printed twice on one screen.
+   ===================================================================== */
+.mast{position:sticky;top:0;z-index:50}
+.mast::before{
+  content:"";position:absolute;inset:0;
+  background:rgba(242,237,228,.9);
+  -webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);
+  border-bottom:1px solid var(--rule);
+  opacity:0;transition:opacity .35s var(--ease);
+}
+.mast.is-stuck::before{opacity:1}
+.mast .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:2rem;height:var(--mast)}
+.mark{
+  font-family:var(--serif);font-size:1.3rem;font-weight:400;letter-spacing:-.01em;line-height:1;
+  white-space:nowrap;opacity:0;transform:translateY(.35rem);pointer-events:none;
+  transition:opacity .35s var(--ease),transform .45s var(--ease-out),color .2s var(--ease);
+}
+.mark em{font-style:italic}
+.mast.show-mark .mark{opacity:1;transform:none;pointer-events:auto}
+.mark:hover{color:var(--sage)}
+.nav{min-width:0}
+.nav ol{position:relative;display:flex;align-items:center;gap:clamp(1.1rem,2.3vw,2.25rem)}
+.nav li{flex:none}
+.nav a{
+  position:relative;display:flex;align-items:baseline;gap:.4rem;padding:.6rem 0;
+  font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1;
+  color:var(--ink-60);transition:color .2s var(--ease);
+}
+.nav a .n{font-family:var(--serif);font-style:italic;font-size:.9375rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-40);transition:color .2s var(--ease)}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.15rem;height:1px;background:var(--sage);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease-out);
+}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="true"]{color:var(--sage)}
+.nav a[aria-current="true"] .n{color:var(--sage)}
+.nav a[aria-current="true"]::after{transform:scaleX(1)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:1px;overflow:hidden;pointer-events:none}
+.progress i{display:block;height:100%;background:var(--sage);transform:scaleX(0);transform-origin:left;will-change:transform}
+
+@media (max-width:860px){
+  .nav a .n{display:none}
+}
+@media (max-width:760px){
+  .mast .wrap{padding-inline:0}
+  .mark{display:none}
+  .nav{
+    flex:1;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 1.25rem,#000 calc(100% - 2rem),transparent 100%);
+            mask-image:linear-gradient(90deg,transparent 0,#000 1.25rem,#000 calc(100% - 2rem),transparent 100%);
+  }
+  .nav ol{
+    height:var(--mast);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+    padding-left:var(--gutter);gap:1.6rem;
+  }
+  .nav ol::-webkit-scrollbar{display:none}
+  .nav li:last-child{padding-right:var(--gutter)}
+}
+
+/* =====================================================================
+   TITLE PAGE
+   ===================================================================== */
+.hero{padding-top:clamp(2rem,6vw,5rem)}
+.hero-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 2rem}
+@media (max-width:560px){
+  .hero-top .kick-2,.hero-top .sep{display:none}
+  .hero-top .nw{display:block}
+}
+.name{
+  margin:clamp(1.75rem,4.5vw,3.25rem) 0 0 -.06em;
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(3.75rem,18vw,12.25rem);line-height:.82;letter-spacing:-.032em;
+}
+/* each line sits in its own window so it can rise into place; the
+   padding gives ascenders, the j and the italic overhang room so the
+   window never clips a letter */
+.name .line{display:block;overflow:hidden;padding:.08em .12em .16em 0;margin:-.08em 0 -.16em}
+.name .line > span{display:block}
+.name em{font-style:italic;padding-left:.48em}
+
+.hero-grid{
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:3rem;
+  margin-top:clamp(2.75rem,6vw,5rem);
+}
+.lede-block,.toc-block{grid-column:1/-1;min-width:0}
+.lede{
+  font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(1.65rem,3.2vw,2.5rem);line-height:1.2;letter-spacing:-.012em;
+  text-wrap:balance;
+}
+.sublede{margin-top:1.4rem;max-width:31rem;font-size:.9375rem;line-height:1.75;color:var(--ink-70);text-wrap:pretty}
+
+.toc-block > .label{display:block;margin-bottom:1rem}
+.toc a{
+  display:flex;align-items:baseline;gap:.8rem;padding:.8rem 0;border-top:1px solid var(--rule);
+}
+.toc li:last-child a{border-bottom:1px solid var(--rule)}
+.toc .n{flex:none;width:1.6rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-40);transition:color .25s var(--ease)}
+.toc .t{
+  font-family:var(--serif);font-size:1.5rem;font-weight:400;line-height:1.1;letter-spacing:-.01em;
+  transition:transform .35s var(--ease-out),color .25s var(--ease);
+}
+.toc .leader{flex:1;min-width:1.5rem;height:.5em;border-bottom:1px dotted var(--rule-strong)}
+.toc .v{flex:none;font-size:.6875rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60);transition:color .25s var(--ease)}
+.toc a:hover .t{color:var(--sage);transform:translateX(.4rem)}
+.toc a:hover .n,.toc a:hover .v{color:var(--sage)}
+
+@media (min-width:960px){
+  .lede-block{grid-column:7/13;grid-row:1}
+  .toc-block{grid-column:1/6;grid-row:1}
+}
+
+/* the numbers strip: countable, not adjectival */
+.glance{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap);row-gap:2rem;
+  margin-top:clamp(3.5rem,7vw,6rem);border-top:1px solid var(--ink);
+}
+.glance li{padding-top:1.35rem;min-width:0}
+.glance .v{
+  display:block;font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.6rem,5vw,4.25rem);line-height:.95;letter-spacing:-.02em;
+  font-variant-numeric:lining-nums;
+}
+.glance .l{display:block;margin-top:.7rem;max-width:17rem;font-size:.8125rem;line-height:1.55;color:var(--ink-70)}
+@media (max-width:760px){
+  .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* =====================================================================
+   SECTIONS
+   ===================================================================== */
+.sec{padding-top:clamp(5rem,11vw,9rem)}
+.sec-head{
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:1.1rem;
+  align-items:end;padding-bottom:clamp(1.5rem,3vw,2.25rem);border-bottom:1px solid var(--rule);
+}
+.sec-kick{grid-column:1/-1;display:flex;align-items:baseline;gap:.8rem}
+.sec-kick .n{font-family:var(--serif);font-style:italic;font-size:1.25rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--sage)}
+.h2{
+  grid-column:1/-1;font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.5rem,6vw,4.5rem);line-height:.98;letter-spacing:-.025em;text-wrap:balance;
+}
+.h2 em{font-style:italic;color:var(--sage)}
+.dek{
+  grid-column:1/-1;max-width:30rem;font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.125rem,1.6vw,1.3rem);line-height:1.4;color:var(--ink-70);text-wrap:pretty;
+}
+@media (min-width:960px){
+  .h2{grid-column:1/9}
+  .dek{grid-column:9/13;padding-bottom:.4rem}
+}
+
+/* shared two-column record: a margin column and a reading column */
+.entry,.role,.item,.award{
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:1.5rem;
+  padding-block:clamp(2.5rem,5vw,3.75rem);border-bottom:1px solid var(--rule);
+}
+.entry > *,.role > *,.item > *,.award > *{grid-column:1/-1;min-width:0}
+@media (min-width:960px){
+  .entry > .side,.role > .side,.award > .side{grid-column:1/4}
+  .entry > .body,.role > .body,.award > .body{grid-column:5/13}
+  .item > .side{grid-column:1/5}
+  .item > .body{grid-column:6/13}
+}
+
+/* ---------- 01 about ---------- */
+.about-grid{
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:3rem;
+  margin-top:clamp(2.5rem,5vw,4rem);
+}
+.prose{grid-column:1/-1;max-width:37rem}
+.prose p{font-size:1.0625rem;line-height:1.8;color:var(--ink-80);text-wrap:pretty}
+.prose p + p{margin-top:1.4rem}
+.prose p:first-child::first-letter{
+  float:left;margin:.1em .12em 0 -.02em;
+  font-family:var(--serif);font-weight:300;font-size:4.35em;line-height:.78;color:var(--sage);
+}
+.facts{grid-column:1/-1;border-top:1px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.facts dt{font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;line-height:1.9;color:var(--ink-60)}
+.facts dd{font-size:.9375rem;line-height:1.6}
+@media (min-width:960px){
+  .prose{grid-column:1/7}
+  .facts{grid-column:8/13;align-self:start}
+}
+
+/* ---------- 02 papers ---------- */
+.group{margin-top:clamp(3rem,6vw,4.5rem)}
+.group:first-of-type{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.group-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--ink)}
+.group-head .ct{font-family:var(--serif);font-style:italic;font-size:1.125rem;color:var(--ink-60)}
+
+.side .yr{font-family:var(--serif);font-weight:300;font-size:2.4rem;line-height:.9;letter-spacing:-.02em;color:var(--ink-40);font-variant-numeric:lining-nums}
+.status{margin-top:.8rem;font-family:var(--serif);font-style:italic;font-size:1.125rem;line-height:1.38;color:var(--sage)}
+.status .next{display:block;margin-top:.2rem;color:var(--ink-60)}
+.side .doi{margin-top:.9rem;font-size:.75rem;letter-spacing:.06em;line-height:1.5;color:var(--ink-70);word-break:break-word}
+
+.figs{margin-top:1.6rem;border-top:1px solid var(--rule)}
+.figs li{padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.figs .v{display:block;font-family:var(--serif);font-size:1.7rem;line-height:1;letter-spacing:-.01em;font-variant-numeric:lining-nums}
+.figs .l{display:block;margin-top:.35rem;font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;line-height:1.5;color:var(--ink-60)}
+
+/* below the two-column breakpoint the margin column becomes a header row */
+@media (max-width:959px){
+  .entry:not(.project) > .side{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:1.4rem;align-items:start}
+  .entry:not(.project) > .side > *{grid-column:2}
+  .entry:not(.project) > .side > .yr{grid-column:1;grid-row:2 / span 2}
+  .entry:not(.project) > .side > .status{margin-top:0}
+  .entry:not(.project) > .side > .no,.entry:not(.project) > .side > .figs{grid-column:1/-1}
+  .entry:not(.project) > .side > .rail{margin-top:.2rem}
+  .side .figs{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(7.25rem,1fr));column-gap:1.25rem}
+}
+
+.kick{display:block}
+.h3{
+  margin-top:.8rem;max-width:42rem;font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.16;letter-spacing:-.012em;text-wrap:balance;
+}
+.authors{margin-top:.9rem;font-size:.875rem;line-height:1.7;color:var(--ink-70)}
+.authors b{font-weight:600;color:var(--ink)}
+.venue{margin-top:.45rem;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;line-height:1.65}
+.venue span{color:var(--ink-60)}
+.summary{margin-top:1.4rem;max-width:38rem;font-size:.9375rem;line-height:1.8;color:var(--ink-80);text-wrap:pretty}
+.contrib{
+  margin-top:1.25rem;max-width:38rem;padding-left:1.1rem;border-left:1px solid var(--sage);
+  font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.45;color:var(--ink-70);text-wrap:pretty;
+}
+
+/* depth on demand: closed, it costs the scroll nothing. The marker is a
+   plus that turns into a cross; there is no dash anywhere on this site. */
+.mores{margin-top:1.8rem;max-width:38rem;border-bottom:1px solid var(--rule)}
+.more{border-top:1px solid var(--rule)}
+.more > summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:.7rem;padding:.95rem 0;
+  font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;line-height:1.4;
+  color:var(--ink-60);transition:color .2s var(--ease);
+  -webkit-user-select:none;user-select:none;
+}
+.more > summary::-webkit-details-marker{display:none}
+.more > summary::before{
+  content:"+";flex:none;width:.85rem;text-align:center;
+  font-family:var(--serif);font-size:1.3rem;font-weight:400;line-height:.8;
+  transition:transform .4s var(--ease-out);
+}
+.more > summary .ct{margin-left:auto;font-family:var(--serif);font-style:italic;font-size:1rem;font-weight:400;letter-spacing:0;text-transform:none}
+.more > summary:hover,.more[open] > summary{color:var(--sage)}
+.more[open] > summary::before{transform:rotate(45deg)}
+.more[open] > .more-body{animation:unfold .5s var(--ease-out)}
+@keyframes unfold{from{opacity:0;transform:translateY(-.35rem)}to{opacity:1;transform:none}}
+.more-body{padding-bottom:1.1rem}
+
+.hang > li{position:relative;padding-left:1.35rem;font-size:.9375rem;line-height:1.72;color:var(--ink-80);text-wrap:pretty}
+.hang > li + li{margin-top:.75rem}
+.hang > li::before{content:"";position:absolute;left:.1rem;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--sage);opacity:.85}
+
+.notes{counter-reset:note}
+.notes li{position:relative;counter-increment:note;padding:1.05rem 0 1.05rem 2.4rem;border-top:1px solid var(--rule)}
+.notes li:first-child{border-top:0;padding-top:.35rem}
+.notes li::before{
+  content:counter(note,lower-roman);position:absolute;left:0;top:1.1rem;
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.3;color:var(--ink-40);
+}
+.notes li:first-child::before{top:.4rem}
+.notes .k{display:block;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.3;color:var(--sage)}
+.notes .b{display:block;margin-top:.35rem;font-size:.875rem;line-height:1.75;color:var(--ink-80);text-wrap:pretty}
+
+.award .place{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.5rem;line-height:.9;color:var(--sage)}
+.award .where{margin-top:.75rem}
+.award .h3{margin-top:0}
+.award .summary{margin-top:.75rem}
+
+/* ---------- 03 labs ---------- */
+.org{font-family:var(--serif);font-size:1.65rem;font-weight:400;line-height:1.12;letter-spacing:-.012em;text-wrap:balance}
+.mentor{margin-top:.55rem;font-size:.875rem;line-height:1.55;color:var(--ink-70)}
+.span{display:block;margin-top:.7rem}
+.focus{margin-top:.65rem;max-width:38rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2vw,1.65rem);line-height:1.22;text-wrap:balance}
+.role .hang,.project .hang{margin-top:1.5rem;max-width:38rem}
+
+/* ---------- 04 build ---------- */
+.p-title{
+  margin-top:.8rem;max-width:40rem;font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.9rem,3.4vw,2.75rem);line-height:1.04;letter-spacing:-.02em;text-wrap:balance;
+}
+.project .summary{font-size:1rem}
+.stack{display:flex;flex-wrap:wrap;gap:.45rem 1.25rem;margin-top:1.6rem}
+.stack li{font-size:.6875rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60)}
+.project > .side .status{margin-top:1rem}
+
+/* ---------- 05 community ---------- */
+.i-title{font-family:var(--serif);font-size:1.65rem;font-weight:400;line-height:1.12;letter-spacing:-.012em}
+.i-org{margin-top:.4rem;font-size:.875rem;font-weight:500;line-height:1.5;color:var(--sage)}
+.item .body > p{max-width:38rem;font-size:.9375rem;line-height:1.8;color:var(--ink-80);text-wrap:pretty}
+.item .body > p + p{margin-top:.9rem}
+.honors{margin-top:1.4rem;max-width:38rem}
+.honors > .label{display:block;margin-bottom:.45rem}
+.honors li{
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.15rem 1.25rem;
+  padding:.65rem 0;border-top:1px solid var(--rule);
+  font-family:var(--serif);font-size:1.1rem;line-height:1.35;
+}
+.honors li:last-child{border-bottom:1px solid var(--rule)}
+.honors .r{font-style:italic;color:var(--sage)}
+.honors .e{margin-left:auto;color:var(--ink-80);text-align:right}
+
+/* ---------- 06 contact ---------- */
+.contact{margin-top:clamp(2.5rem,5vw,3.5rem);max-width:46rem;border-top:1px solid var(--ink)}
+.contact div{display:grid;grid-template-columns:7rem minmax(0,1fr) auto;align-items:baseline;column-gap:1rem;row-gap:.35rem;padding:1.2rem 0;border-bottom:1px solid var(--rule)}
+.contact dt{font-size:.6875rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60)}
+.contact dd{min-width:0}
+.contact dd a{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.2;letter-spacing:-.01em;word-break:break-word}
+.copy{
+  display:none;align-items:center;justify-self:end;cursor:pointer;
+  padding:.5rem .9rem;border:1px solid var(--rule-strong);border-radius:999px;background:transparent;
+  font-size:.625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1;color:var(--ink-70);
+  transition:color .2s var(--ease),border-color .2s var(--ease),background-color .2s var(--ease);
+}
+.js .copy{display:inline-flex}
+.copy:hover{color:var(--sage);border-color:var(--sage)}
+.copy.done{color:var(--paper);background:var(--sage);border-color:var(--sage)}
+@media (max-width:560px){
+  .contact div{grid-template-columns:minmax(0,1fr) auto}
+  .contact dt{grid-column:1/-1}
+}
+
+/* ---------- footer ---------- */
+.foot{margin-top:clamp(5rem,11vw,9rem);border-top:1px solid var(--rule)}
+.foot .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.75rem 2rem;padding-block:2rem 2.75rem}
+.foot p,.foot a{font-size:.625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;line-height:1.6;color:var(--ink-60)}
+.foot a{transition:color .2s var(--ease)}
+.foot a:hover{color:var(--sage)}
+
+
+/* ---------- catalogue numbers: every record has an address ---------- */
+.no{display:block;margin-bottom:.55rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1;color:var(--ink-40);font-variant-numeric:lining-nums}
+
+/* ---------- status track: one node per stage, filled once it has happened ---------- */
+.rail{margin-top:1.2rem}
+.rail li{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.6rem;padding:0 0 .55rem 1.45rem;line-height:1.35}
+.rail li:last-child{padding-bottom:0}
+.rail li::before{
+  content:"";position:absolute;left:0;top:.42rem;z-index:1;width:9px;height:9px;border-radius:50%;
+  border:1.5px solid var(--ink-40);background:var(--paper);box-sizing:border-box;
+}
+.rail li::after{content:"";position:absolute;left:4px;top:calc(.42rem + 9px);bottom:-.42rem;width:1px;background:var(--rule-strong)}
+.rail li:last-child::after{display:none}
+.rail .st{font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60)}
+.rail .dt{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--ink-60)}
+.rail li.ok .st,.rail li.ok .dt,.rail li.half .st,.rail li.half .dt{color:var(--sage)}
+.rail li.ok::before{background:var(--sage);border-color:var(--sage)}
+.rail li.ok:has(+ li.ok)::after,.rail li.ok:has(+ li.half)::after{background:var(--sage)}
+.rail li.half::before{border-color:var(--sage);background:linear-gradient(90deg,var(--sage) 50%,var(--paper) 50%)}
+.rail-cap{margin-top:.9rem;font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.4;color:var(--ink-70)}
+.rail-note{display:inline-block;margin-top:1rem;padding:.35rem .65rem;border:1px solid var(--rule-strong);border-radius:999px;font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;line-height:1;color:var(--ink-70)}
+
+/* ---------- two bars on one scale: the model against the clock ---------- */
+.cmp{margin-top:1.4rem}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:.75rem;align-items:baseline;padding-top:.7rem}
+.cmp-row + .cmp-row{padding-top:.55rem}
+.cmp-l{font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;color:var(--ink-60)}
+.cmp-v{font-family:var(--serif);font-size:1.35rem;line-height:1;font-variant-numeric:lining-nums}
+.cmp-bar{grid-column:1/-1;position:relative;height:6px;margin-top:.45rem;border-radius:3px;background:var(--rule)}
+.cmp-bar i{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:3px;background:var(--ink-40);transform-origin:left}
+.cmp-row.lead .cmp-bar i{background:var(--sage)}
+.cmp-row.lead .cmp-l{color:var(--sage)}
+.cmp figcaption{margin-top:.75rem;font-size:.75rem;line-height:1.5;color:var(--ink-60)}
+.reveal [data-reveal] .cmp-bar i{transition:transform 1.4s var(--ease-out) .25s}
+.reveal [data-reveal]:not(.in) .cmp-bar i{transform:scaleX(0)}
+
+/* ---------- the timeline: eleven years, one scale, one row per commitment ---------- */
+.tl{margin-top:clamp(3.75rem,8vw,6rem)}
+.tl-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.6rem 1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--ink)}
+.tl-title{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,2.8vw,2.15rem);line-height:1.1;letter-spacing:-.015em}
+.tl-title em{font-style:italic;color:var(--sage)}
+.tl-key{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+.tl-key span{display:inline-flex;align-items:center;gap:.5rem;font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60)}
+.tl-key .k-r::before,.tl-key .k-a::before{content:"";width:1.1rem;height:6px;border-radius:3px}
+.tl-key .k-r::before{background:var(--sage)}
+.tl-key .k-a::before{background:var(--ink-40)}
+.tl-key .k-p::before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--sage);background:var(--paper);box-sizing:border-box}
+
+.tl-axis,.tl-row{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);column-gap:1.75rem;align-items:center}
+.tl-track{position:relative;height:2.25rem;background-image:repeating-linear-gradient(90deg,var(--rule) 0,var(--rule) 1px,transparent 1px,transparent calc(100% / 12))}
+.tl-track::after{content:"";position:absolute;top:0;bottom:0;left:calc(142 / 144 * 100%);width:1px;background:var(--sage);opacity:.55}
+.tl-axis .tl-track{height:2.4rem}
+.tl-axis .tl-track::before{content:"Now";position:absolute;bottom:.55rem;left:calc(142 / 144 * 100%);transform:translateX(-50%);font-size:.5625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.tl-yr{position:absolute;bottom:.5rem;left:calc(var(--i) / 12 * 100%);padding-left:.3rem;font-family:var(--serif);font-style:italic;font-size:.95rem;line-height:1;color:var(--ink-60);font-variant-numeric:lining-nums}
+.tl-yr.last{display:none}
+
+.tl-rows{border-bottom:1px solid var(--rule)}
+.tl-row{border-top:1px solid var(--rule);transition:background-color .25s var(--ease)}
+.tl-l{display:flex;align-items:baseline;gap:.6rem;min-width:0;padding:.55rem 0;font-size:.875rem;line-height:1.3;transition:color .2s var(--ease)}
+.tl-l .tl-no{flex:none;width:1.8rem;font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--ink-40);font-variant-numeric:lining-nums}
+.tl-l .tl-n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-l .leader{flex:1;min-width:.75rem;height:.5em;border-bottom:1px dotted var(--rule-strong)}
+.tl-l .tl-w{flex:none;font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60)}
+.tl-bar{
+  position:absolute;top:50%;height:6px;margin-top:-3px;border-radius:3px;
+  left:calc(var(--s) / 144 * 100%);width:max(5px,calc(var(--d) / 144 * 100%));
+  background:var(--ink-40);transform-origin:left;transition:background-color .2s var(--ease);
+}
+.tl-row.res .tl-bar{background:var(--sage)}
+.tl-pin{position:absolute;top:50%;z-index:1;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;left:calc(var(--m) / 144 * 100%);border-radius:50%;border:1.5px solid var(--sage);background:var(--paper);box-sizing:border-box}
+.tl-row:hover,.tl-row:focus-visible{background-color:rgba(85,96,74,.06)}
+.tl-row:hover .tl-l,.tl-row:focus-visible .tl-l{color:var(--sage)}
+.tl-row:hover .tl-bar{background:var(--ink-70)}
+.tl-row.res:hover .tl-bar{background:#46503c}
+.tl-note{margin-top:.9rem;font-size:.75rem;line-height:1.6;color:var(--ink-60)}
+.reveal .tl.in .tl-bar{animation:grow 1.3s var(--ease-out) both;animation-delay:calc(var(--k) * 60ms + 150ms)}
+.reveal .tl:not(.in) .tl-bar{transform:scaleX(0)}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+@media (max-width:760px){
+  .tl-axis,.tl-row{grid-template-columns:minmax(0,1fr);row-gap:0}
+  .tl-axis > span:first-child{display:none}
+  .tl-l{padding:.7rem 0 .1rem}
+  .tl-row .tl-track{height:1.7rem}
+  .tl-yr{font-size:.85rem}
+  .tl-yr.odd{display:none}
+}
+
+/* =====================================================================
+   MOTION
+   The title page sets once, line by line. Further down, each record
+   rises a few pixels as it arrives. All of it is skipped for anyone who
+   has asked their system for reduced motion.
+   ===================================================================== */
+.js .name .line > span{animation:rise 1.15s var(--ease-out) both}
+.js .name .line:nth-child(2) > span{animation-delay:.09s}
+.js .set{animation:fade 1s var(--ease-out) both}
+.js .set.d1{animation-delay:.25s}
+.js .set.d2{animation-delay:.4s}
+.js .set.d3{animation-delay:.55s}
+@keyframes rise{from{transform:translateY(104%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(.6rem)}to{opacity:1;transform:none}}
+
+.reveal [data-reveal]{transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.reveal [data-reveal]:not(.in){opacity:0;transform:translateY(1.1rem)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
+}
+
+/* =====================================================================
+   PRINT: everything on paper, chrome off
+   ===================================================================== */
+@media print{
+  html,body{background:#fff}
+  .mast,.skip,.copy,.foot a{display:none!important}
+  .hero{padding-top:0}
+  .name{font-size:5.5rem}
+  .sec{padding-top:2.5rem}
+  .entry,.role,.item,.award,.facts div,.honors li{break-inside:avoid}
+  .sec-head{break-after:avoid}
+  [data-reveal]{opacity:1!important;transform:none!important}
+  .js .name .line > span,.js .set{animation:none!important}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Srishtijit Bhadra",
+  "url": "https://theesmartone.github.io/",
+  "sameAs": ["https://github.com/THEESMARTONE"],
+  "affiliation": {"@type": "EducationalOrganization", "name": "Collegiate School", "address": "New York, NY"},
+  "knowsAbout": ["Melanoma survivorship", "Surgical computer vision", "Computational genomics", "Machine learning"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="mast" id="mast">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Back to the top">Srishtijit <em>Bhadra</em></a>
+    <nav class="nav" aria-label="Sections">
+      <ol>
+        <li><a href="#about"><span class="n" aria-hidden="true">01</span>About</a></li>
+        <li><a href="#papers"><span class="n" aria-hidden="true">02</span>Papers</a></li>
+        <li><a href="#labs"><span class="n" aria-hidden="true">03</span>Labs</a></li>
+        <li><a href="#build"><span class="n" aria-hidden="true">04</span>Build</a></li>
+        <li><a href="#community"><span class="n" aria-hidden="true">05</span>Community</a></li>
+        <li><a href="#contact"><span class="n" aria-hidden="true">06</span>Contact</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><i></i></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================================================================
+     TITLE PAGE
+     ================================================================ -->
+<section class="hero wrap" id="top" aria-label="Introduction">
+  <div class="hero-top set">
+    <p class="label"><span class="nw">Collegiate School, New York</span><span class="sep" aria-hidden="true"> &nbsp;·&nbsp; </span><span class="nw">Class of 2027</span></p>
+    <p class="label kick-2">Research and projects &nbsp;·&nbsp; October 2026</p>
+  </div>
+
+  <h1 class="name">
+    <span class="line"><span>Srishtijit</span></span>
+    <span class="line"><span><em>Bhadra</em></span></span>
+  </h1>
+
+  <div class="hero-grid">
+    <div class="lede-block set d1">
+      <p class="lede">I build computational tools to measure what treatment leaves behind, the part of medicine that usually gets measured last.</p>
+      <p class="sublede">Research in melanoma survivorship, surgical computer vision, and computational genomics, with the Deep Chain Lab at Fairleigh Dickinson University and at Weill Cornell Medicine.</p>
+    </div>
+
+    <nav class="toc-block set d2" aria-label="Contents">
+      <span class="label">Contents</span>
+      <ol class="toc">
+        <li><a href="#about"><span class="n">01</span><span class="t">About</span><span class="leader" aria-hidden="true"></span><span class="v">Two paragraphs</span></a></li>
+        <li><a href="#papers"><span class="n">02</span><span class="t">Papers</span><span class="leader" aria-hidden="true"></span><span class="v">Four papers</span></a></li>
+        <li><a href="#labs"><span class="n">03</span><span class="t">Labs</span><span class="leader" aria-hidden="true"></span><span class="v">Four positions</span></a></li>
+        <li><a href="#build"><span class="n">04</span><span class="t">Build</span><span class="leader" aria-hidden="true"></span><span class="v">Three projects</span></a></li>
+        <li><a href="#community"><span class="n">05</span><span class="t">Community</span><span class="leader" aria-hidden="true"></span><span class="v">Six commitments</span></a></li>
+        <li><a href="#contact"><span class="n">06</span><span class="t">Contact</span><span class="leader" aria-hidden="true"></span><span class="v">Email and GitHub</span></a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <ul class="glance set d3" aria-label="At a glance">
+    <li><span class="v">2</span><span class="l">first-author IEEE conference papers, both presented in 2026</span></li>
+    <li><span class="v">1st</span><span class="l">place, IEEE Research Competition at Fairleigh Dickinson University</span></li>
+    <li><span class="v">96,201</span><span class="l">seconds of robotic surgery annotated, second by second</span></li>
+    <li><span class="v">5,052</span><span class="l">records screened for a review of prediction models</span></li>
+  </ul>
+</section>
+
+<!-- ================================================================
+     01 ABOUT
+     ================================================================ -->
+<section class="sec wrap" id="about" aria-labelledby="about-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">01</span>About</p>
+    <h2 class="h2" id="about-h">What the work <em>is for</em></h2>
+  </header>
+
+  <div class="about-grid">
+    <div class="prose" data-reveal>
+      <p>Most of my work sits at the seam between a treatment working and a person being okay. Checkpoint inhibitors have changed what survival looks like in melanoma, and they have left a second problem behind, made of cardiac and neurologic toxicity, fear of recurrence, and a quality-of-life burden that trial endpoints were never designed to capture. Measuring that second problem is what I spend most of my time on.</p>
+      <p>The method usually takes the same shape. I start from an under-structured record, whether patient narratives, national surveillance data, an expression matrix, or hours of surgical video, and ask whether it holds a signal that survives contact with a new population. Often the honest answer is that it does not, and reporting that is part of the work rather than a failure of it.</p>
+    </div>
+
+    <dl class="facts" data-reveal>
+      <div><dt>Based</dt><dd>New York City</dd></div>
+      <div><dt>School</dt><dd>Collegiate School, Class of 2027</dd></div>
+      <div><dt>Focus</dt><dd>Melanoma survivorship · surgical computer vision · computational genomics</dd></div>
+      <div><dt>Methods</dt><dd>PROBAST and CHARMS appraisal, survival analysis, positive-unlabeled learning, Monte Carlo simulation, causal DAGs, structural equation modeling</dd></div>
+      <div><dt>Tools</dt><dd>Python, R, pandas, NumPy, scikit-learn, TensorFlow, Matplotlib, BORIS</dd></div>
+    </dl>
+  </div>
+
+  <figure class="tl" data-reveal aria-labelledby="tl-title">
+    <figcaption class="tl-head">
+      <span class="tl-title" id="tl-title">The last eleven years, <em>at one scale</em></span>
+      <span class="tl-key"><span class="k-r">Research</span><span class="k-a">Everything else</span><span class="k-p">Paper presented</span></span>
+    </figcaption>
+    <div class="tl-axis" aria-hidden="true">
+      <span></span>
+      <span class="tl-track"><span class="tl-yr" style="--i:0">2015</span><span class="tl-yr odd" style="--i:1">2016</span><span class="tl-yr" style="--i:2">2017</span><span class="tl-yr odd" style="--i:3">2018</span><span class="tl-yr" style="--i:4">2019</span><span class="tl-yr odd" style="--i:5">2020</span><span class="tl-yr" style="--i:6">2021</span><span class="tl-yr odd" style="--i:7">2022</span><span class="tl-yr" style="--i:8">2023</span><span class="tl-yr odd" style="--i:9">2024</span><span class="tl-yr" style="--i:10">2025</span><span class="tl-yr odd" style="--i:11">2026</span></span>
+    </div>
+    <ol class="tl-rows">
+      <li><a class="tl-row" href="#r-music" style="--s:0;--d:142;--k:0"><span class="tl-l"><span class="tl-no">5.6</span><span class="tl-n">Piano and voice</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2015</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row" href="#r-gita" style="--s:36;--d:106;--k:1"><span class="tl-l"><span class="tl-no">5.5</span><span class="tl-n">Gita tutor</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2018</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row" href="#r-scioly" style="--s:104;--d:38;--k:2"><span class="tl-l"><span class="tl-no">5.3</span><span class="tl-n">Science Olympiad</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2023</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row" href="#r-cs55" style="--s:104;--d:38;--k:3"><span class="tl-l"><span class="tl-no">5.4</span><span class="tl-n">CS55 math tutoring</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2023</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row res" href="#r-deepchain" style="--s:125;--d:17;--k:4"><span class="tl-l"><span class="tl-no">3.2</span><span class="tl-n">Deep Chain Lab</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2025</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span><span class="tl-pin" style="--m:134.5"></span><span class="tl-pin" style="--m:141.3"></span></span></a></li>
+      <li><a class="tl-row res" href="#r-rosetta" style="--s:126;--d:1;--k:5"><span class="tl-l"><span class="tl-no">3.4</span><span class="tl-n">Rosetta Institute</span><span class="leader" aria-hidden="true"></span><span class="tl-w">July 2025</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row res" href="#r-cognigenics" style="--s:127;--d:1.25;--k:6"><span class="tl-l"><span class="tl-no">3.3</span><span class="tl-n">Cognigenics</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Summer 2025</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row" href="#r-enable" style="--s:128;--d:14;--k:7"><span class="tl-l"><span class="tl-no">5.1</span><span class="tl-n">ENABLE-3D</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2025</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row" href="#r-ftc" style="--s:128;--d:14;--k:8"><span class="tl-l"><span class="tl-no">5.2</span><span class="tl-n">FIRST Tech Challenge</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2025</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+      <li><a class="tl-row res" href="#r-wcm" style="--s:138;--d:4;--k:9"><span class="tl-l"><span class="tl-no">3.1</span><span class="tl-n">Weill Cornell Medicine</span><span class="leader" aria-hidden="true"></span><span class="tl-w">Since 2026</span></span><span class="tl-track" aria-hidden="true"><span class="tl-bar"></span></span></a></li>
+    </ol>
+    <p class="tl-note">Drawn by month where the month is known and by year where it is not. Each row opens its record further down the page.</p>
+  </figure>
+</section>
+
+<!-- ================================================================
+     02 PAPERS
+     ================================================================ -->
+<section class="sec wrap" id="papers" aria-labelledby="papers-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">02</span>Papers</p>
+    <h2 class="h2" id="papers-h">The record, and <em>where each piece stands</em></h2>
+    <p class="dek">Each entry tracks its own progress in the margin, with a filled mark for every step that has happened and an open one for every step still to come.</p>
+  </header>
+
+  <div class="group">
+    <div class="group-head" data-reveal>
+      <h3 class="label">Published and presented</h3>
+      <span class="ct">Three</span>
+    </div>
+
+    <ol>
+      <!-- ISAIA -->
+      <li class="entry" id="r-isaia" data-reveal>
+        <div class="side">
+          <span class="no">2.1</span>
+          <p class="yr">2026</p>
+          <ol class="rail" aria-label="Progress"><li class="ok"><span class="st">Submitted</span></li><li class="ok"><span class="st">Accepted</span></li><li class="ok"><span class="st">Presented</span><span class="dt">October 2026</span></li><li><span class="st">Indexed</span><span class="dt">Awaiting IEEE Xplore</span></li></ol>
+          <ul class="figs">
+            <li><span class="v">5</span><span class="l">data domains</span></li>
+            <li><span class="v">3</span><span class="l">modeling approaches</span></li>
+          </ul>
+        </div>
+        <div class="body">
+          <span class="kick label sage">First author · Conference paper · 6 pages</span>
+          <h4 class="h3">Toward Human-Centered Survivorship Intelligence: A PNI-Grounded Data-Driven Framework for Melanoma</h4>
+          <p class="authors"><b>Bhadra S</b>, Pichappan S, Vatsa A</p>
+          <p class="venue">IEEE International Conference on Intelligent Systems and Interdisciplinary Applications (ISAIA 2026) <span>· Montclair, New Jersey</span></p>
+          <p class="summary">Proposes a way to predict which melanoma survivors will carry lasting burden, grounded in psychoneuroimmunology rather than treatment history, which the evidence shows is a poor guide to who struggles afterward. Five data domains (immune and endocrine biomarkers, neurocognitive testing, validated psychological instruments, socioeconomic indicators, and wearable physiology) map onto a specified causal DAG, gathered through a dual-pathway design that tests whether biomarkers add anything beyond patient-reported and wearable data. Clustering, gradient boosting with interpretability, and structural equation modeling combine into a proposed Melanoma Survivorship Risk Score, which needs multi-site validation before it means anything clinically.</p>
+          <div class="mores">
+            <details class="more">
+              <summary>What it took to learn <span class="ct">Three things</span></summary>
+              <div class="more-body">
+                <ul class="hang">
+                  <li>Psychoneuroimmunology, far enough to map five data domains onto a single causal structure.</li>
+                  <li>Directed acyclic graphs, and what it means to commit to a causal structure before fitting anything.</li>
+                  <li>Structural equation modeling, and how to check for construct overlap between validated psychological instruments.</li>
+                </ul>
+              </div>
+            </details>
+            <details class="more">
+              <summary>Method notes <span class="ct">Two</span></summary>
+              <div class="more-body">
+                <ol class="notes">
+                  <li><span class="k">A causal DAG, not a feature dump</span><span class="b">Each data domain is mapped onto a directed acyclic graph whose pathways and interactions are written down in advance, so the framework has a stated causal structure that can be shown wrong rather than an unordered pile of features.</span></li>
+                  <li><span class="k">Dual-pathway collection</span><span class="b">The design tests whether immune and endocrine biomarkers add predictive value beyond patient-reported outcomes and wearable data instead of assuming they do. Clustering, gradient boosting with interpretability, and structural equation modeling each carry defined outcome thresholds and a safeguard against construct overlap between instruments.</span></li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </div>
+      </li>
+
+      <!-- ISEC -->
+      <li class="entry" id="r-isec" data-reveal>
+        <div class="side">
+          <span class="no">2.2</span>
+          <p class="yr">2026</p>
+          <ol class="rail" aria-label="Progress"><li class="ok"><span class="st">Submitted</span></li><li class="ok"><span class="st">Accepted</span></li><li class="ok"><span class="st">Presented</span><span class="dt">March 2026</span></li><li><span class="st">Indexed</span><span class="dt">Awaiting IEEE Xplore</span></li></ol>
+          <ul class="figs">
+            <li><span class="v">36% vs 7%</span><span class="l">need vs receive counseling</span></li>
+            <li><span class="v">41%</span><span class="l">measurable cognitive deficits</span></li>
+            <li><span class="v">35%</span><span class="l">cancer-related PTSD</span></li>
+          </ul>
+        </div>
+        <div class="body">
+          <span class="kick label sage">First author · Conference paper · 8 pages</span>
+          <h4 class="h3">A Comprehensive Review on Melanoma Consumers: Neuroscience, Survivorship, and the Burden of Engagement</h4>
+          <p class="authors"><b>Bhadra S</b>, Pichappan S, Vatsa A</p>
+          <p class="venue">16th IEEE Integrated STEM Education Conference (ISEC ’26) <span>· Princeton University</span></p>
+          <p class="summary">Immune checkpoint inhibitors turned advanced melanoma from a fast-fatal diagnosis into one with durable remission, and in doing so created a population of long-term survivors whose needs run well past tumor surveillance. The review draws clinical, quality-of-life, and patient-engagement studies together into four connected burdens: physical and neurocognitive, with cognitive deficits in 41% of survivors and neurologic immune-related adverse events in 1.5 to 7.2% of treated patients; psychological, with 35% meeting criteria for cancer-related PTSD and fear of recurrence structured around scan dates; socioeconomic, through financial toxicity that falls hardest on younger survivors; and systemic, where 36% need mental health support and 7% receive it. It also names the paradox of the melanoma consumer, the survivor who joins research and advocacy and gains agency while taking on a new cognitive load, and argues that survivorship is a neuroscience problem as much as an oncologic one.</p>
+          <div class="mores">
+            <details class="more">
+              <summary>What it took to learn <span class="ct">Two things</span></summary>
+              <div class="more-body">
+                <ul class="hang">
+                  <li>Reading clinical, quality-of-life, and health-economics literature closely enough to synthesize across them rather than summarize each in turn.</li>
+                  <li>Naming the limits of an evidence base, from cross-sectional designs and small single-center samples to low response rates and the absence of pre-treatment baselines.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </li>
+
+      <!-- Genomic Psychiatry -->
+      <li class="entry" id="r-gp" data-reveal>
+        <div class="side">
+          <span class="no">2.3</span>
+          <p class="yr">2026</p>
+          <ol class="rail" aria-label="Progress"><li class="ok"><span class="st">Submitted</span></li><li class="ok"><span class="st">Accepted</span></li><li class="ok"><span class="st">Published</span><span class="dt">2026</span></li></ol>
+          <p class="doi"><a class="ln" href="https://doi.org/10.61373/gp026r.0051" target="_blank" rel="noopener noreferrer">doi.org/10.61373/gp026r.0051</a></p>
+        </div>
+        <div class="body">
+          <span class="kick label sage">Third author · Journal article · 7 pages</span>
+          <h4 class="h3">Serotonin <span class="nw">5-HT2A</span> Receptor Knockdown as a Holistic Therapeutic Strategy for Alzheimer’s Disease</h4>
+          <p class="authors">Rohn TT, Radin D, <b>Bhadra S</b>, Brandmeyer T, Seidler PG, Linder BJ, Mee JL, Macciardi F</p>
+          <p class="venue">Genomic Psychiatry <span>· Peer-reviewed journal</span></p>
+          <p class="summary">Argues for knockdown of the serotonin <span class="nw">5-HT2A</span> receptor as a whole-system therapeutic strategy in Alzheimer’s disease, as translational support for clinical evaluation of the <span class="nw">Cog-201</span> gene therapy. The analysis behind it draws on the Alzheimer’s Disease Neuroimaging Initiative cohort, testing whether neuropsychiatric symptom severity and global cognition track with serotonergic genotype.</p>
+          <p class="contrib">I ran that ADNI analysis, with Pearson correlations across anxiety severity (NPI-A), global cognition (MMSE), and the HTR2A rs6313 and SLC6A4 rs25531 variants.</p>
+          <div class="mores">
+            <details class="more">
+              <summary>What it took to learn <span class="ct">Three things</span></summary>
+              <div class="more-body">
+                <ul class="hang">
+                  <li>The ADNI data dictionary, and what NPI-A and MMSE are actually measuring.</li>
+                  <li>Genotype variant notation, and how to join genotype tables onto clinical assessment records.</li>
+                  <li>Correlation as an inferential claim rather than a plotted line, including multiple comparisons and what a Pearson coefficient can and cannot support.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="group">
+    <div class="group-head" data-reveal>
+      <h3 class="label">In preparation</h3>
+      <span class="ct">One</span>
+    </div>
+
+    <ol>
+      <!-- Transfer criteria manuscript -->
+      <li class="entry" id="r-transfer" data-reveal>
+        <div class="side">
+          <span class="no">2.4</span>
+          <p class="yr">2026</p>
+          <ol class="rail" aria-label="Progress"><li class="ok"><span class="st">Written</span><span class="dt">Full manuscript</span></li><li class="half"><span class="st">Preparing</span><span class="dt">Health Sciences Review</span></li><li><span class="st">Submitted</span></li><li><span class="st">Published</span></li></ol>
+          <p class="rail-cap">Being split into a journal paper for Health Sciences Review (Elsevier) and a companion conference paper.</p>
+          <ul class="figs">
+            <li><span class="v">5,052</span><span class="l">records screened</span></li>
+            <li><span class="v">28</span><span class="l">models appraised</span></li>
+            <li><span class="v">25 of 28</span><span class="l">at high risk of bias</span></li>
+          </ul>
+        </div>
+        <div class="body">
+          <span class="kick label sage">First author · Structured review with formal appraisal</span>
+          <h4 class="h3">When Prediction Methods Do Not Transfer: Four Criteria, With Checkpoint-Treated Melanoma Survivorship as a Worked Case</h4>
+          <p class="authors"><b>Bhadra S</b>, Pichappan S, Vatsa A</p>
+          <p class="venue">In preparation for Health Sciences Review <span>· Elsevier</span></p>
+          <p class="summary">Checkpoint blockade has produced a population of melanoma survivors presenting with fatigue, low mood, and cognitive slowing, where six separate mechanisms can each produce all three alone and nothing in the presentation says which is at work. The review asks whether prediction methods built in other populations can move into that setting, testing each against four criteria: mechanism correspondence, reversibility, surveillance context, and feature availability. Six candidate methods fail in ways target data can repair. A seventh clinical requirement, attributing a neuropsychiatric presentation to an underlying endocrine injury, has no candidate method at all, and a simulation of one-directional label noise shows why apparent discrimination can rise while the model itself is unchanged.</p>
+          <p class="contrib">I wrote the manuscript and ran the first-pass screening and data extraction. The second reader handled revisions and shared the blinded dual risk-of-bias appraisal and the criteria reliability assessment where those needed two people.</p>
+          <div class="mores">
+            <details class="more">
+              <summary>What it took to learn <span class="ct">Six things</span></summary>
+              <div class="more-body">
+                <ul class="hang">
+                  <li>Survival analysis from the ground up, from censoring and hazards to the Cox partial likelihood read as a ranking loss over risk sets.</li>
+                  <li>PROBAST and CHARMS as instruments with their own rules and signaling questions, not checklists to skim.</li>
+                  <li>Positive-unlabeled learning, and why a naive unbiased estimator overfits flexible model families.</li>
+                  <li>Monte Carlo design, meaning how many replications buy how much precision, and how to size an effect against its own standard deviation before quoting it.</li>
+                  <li>Gwet’s AC1, and why raw percentage agreement is not a reliability statistic.</li>
+                  <li>Reading a paper closely enough to notice that its own numbers disagree with each other.</li>
+                </ul>
+              </div>
+            </details>
+            <details class="more">
+              <summary>Method notes <span class="ct">Nine</span></summary>
+              <div class="more-body">
+                <ol class="notes">
+                  <li><span class="k">Positive-unlabeled, not noisy labels</span><span class="b">An endocrinopathy that was never detected is not recorded as some other mechanism. It is recorded as no mechanism at all, so the negative class is a mixture of true negatives and undetected positives. That makes this positive-unlabeled learning rather than symmetric label noise, and it changes which estimators can be trusted.</span></li>
+                  <li><span class="k">What the simulation actually does</span><span class="b">Each replication draws two independent cohorts of 5,000, with eight covariates split into four a survivorship clinic can measure and four it cannot. The outcome comes from a logistic model over a weighted linear combination of those covariates, with weights alternating in sign from 1.4 down to 0.2 and carrying interaction, quadratic, and sinusoidal terms, and the intercept set by quantile matching so marginal prevalence is exact rather than approximate. Six prevalence levels taken from the clinical literature (0.024 to 0.681), two noise rates, two detection regimes, and two model classes give 48 conditions, each run 100 times.</span></li>
+                  <li><span class="k">Two learner classes, on purpose</span><span class="b">Logistic regression and histogram gradient boosting are both run, because a naive unbiased positive-unlabeled estimator is known to overfit flexible model families. Of the 48 conditions, the five that fall outside two Monte Carlo standard deviations are all in the flexible learner, which is the behavior that prediction anticipates.</span></li>
+                  <li><span class="k">Detection sets the direction of the bias</span><span class="b">Present mechanisms are missed with probability alpha, and absent ones are never recorded as present. Under constant detection, discrimination against the recorded label falls. Under surveillance-dependent detection it rises for the rarer mechanisms, while discrimination against the true mechanism barely moves in either regime. The apparent performance is a property of how patients are watched, not of the model.</span></li>
+                  <li><span class="k">Error measured, not assumed</span><span class="b">Three ways of cutting the screening load were tested and all three were rejected on measured cost. One excluded only 38 records, one lost four relevant papers in a sample of 40 exclusions, and one returned more records than the query it was meant to reduce. A recall check against eight known-eligible studies scored 7 of 8 before a correction and 8 of 8 after. A second independent screen of 250 records puts false exclusion at 3.3% overall and 0.8% on the melanoma arm.</span></li>
+                  <li><span class="k">A correction that works for one learner and not the other</span><span class="b">Dividing the calibration intercept by one minus the noise rate recovers the logistic model almost exactly, moving it from +0.22 to +0.00 at a noise rate of one seventh. The same correction leaves the boosted model at +1.38, having started at +1.58. An analytic fix derived for a well-specified linear model does not carry to a flexible one, which is the sort of thing usually assumed rather than checked.</span></li>
+                  <li><span class="k">Effects sized against the noise floor</span><span class="b">The Monte Carlo standard deviation across the simulation has a median of 0.007 and a maximum of 0.014. Calibration drift exceeds that by an order of magnitude and is quoted with numbers. The rise in discrimination under surveillance-dependent detection sits within a small factor of it, so it is reported directionally with no magnitude attached, rather than dressed up as a result.</span></li>
+                  <li><span class="k">Agreement reported as AC1, and reported low</span><span class="b">Two assessors applied the four criteria across twelve signaling questions and agreed on 102 of 144 answers, giving a Gwet AC1 of 0.58. The weakest criterion was reversibility, which is the one this review contributes, at 0.35 as administered and 0.42 after rewording. Measuring the reliability of a new instrument, and publishing the number when it comes out weak, is not the usual practice.</span></li>
+                  <li><span class="k">Published numbers that disagree with themselves</span><span class="b">Several appraised papers report figures that do not reconcile, including a cohort whose sex counts sum to eight fewer than its stated total, an eight-year AUC given as one value in the text and another in the paper’s own figure, and three mutually inconsistent sets of cross-validated discrimination for the same three timepoints. Each is reported rather than quietly corrected, since the primary data are not available.</span></li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="group">
+    <div class="group-head" data-reveal>
+      <h3 class="label">Recognition</h3>
+      <span class="ct">One</span>
+    </div>
+    <div class="award" data-reveal>
+      <div class="side">
+        <p class="place">1st place</p>
+        <p class="where label">2025</p>
+      </div>
+      <div class="body">
+        <h4 class="h3">IEEE Research Competition, Fairleigh Dickinson University</h4>
+        <p class="summary">Melanoma survivorship research, judged against undergraduate and high school entrants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     03 LABS
+     ================================================================ -->
+<section class="sec wrap" id="labs" aria-labelledby="labs-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">03</span>Labs</p>
+    <h2 class="h2" id="labs-h">Where the work <em>gets done</em></h2>
+    <p class="dek">Three research internships and one summer program, most recent first.</p>
+  </header>
+
+  <ol>
+    <li class="role" id="r-wcm" data-reveal>
+      <div class="side">
+        <span class="no">3.1</span>
+        <h3 class="org">Weill Cornell Medicine</h3>
+        <p class="mentor">Dr. Rasa Zarnegar Lab</p>
+        <span class="span label">Since 2026</span>
+        <ul class="figs">
+          <li><span class="v">96,201</span><span class="l">seconds of video, labeled by hand</span></li>
+        </ul>
+        <figure class="cmp">
+          <div class="cmp-row lead"><span class="cmp-l">Step model</span><span class="cmp-v">89.8%</span><span class="cmp-bar" aria-hidden="true"><i style="--w:89.8%"></i></span></div>
+          <div class="cmp-row"><span class="cmp-l">Elapsed time alone</span><span class="cmp-v">72.9%</span><span class="cmp-bar" aria-hidden="true"><i style="--w:72.9%"></i></span></div>
+          <figcaption>Frame accuracy, validated leave-one-case-out across twenty cases.</figcaption>
+        </figure>
+      </div>
+      <div class="body">
+        <span class="label sage">Surgical AI Research Intern</span>
+        <p class="focus">Computer vision for robotic hiatal hernia repair</p>
+        <ul class="hang">
+          <li>Built an end-to-end system for surgical step annotation and prescriptive analytics in robotic hiatal hernia repair, from the annotation ontology through to inference.</li>
+          <li>A general-purpose vision model (DINOv2) that was never trained on surgery embeds each second of video, a lightweight temporal classifier maps those embeddings to six surgical steps, and workflow rules exclude transitions no surgeon performs.</li>
+          <li>Annotated all twenty cases in BORIS second by second, 96,201 labeled seconds in all, and validated leave-one-case-out at 89.8% frame accuracy, against 72.9% for a reference model that predicts the step from elapsed time alone.</li>
+          <li>First author on an abstract submitted to the SAGES 2027 Annual Meeting. The model is still in development and the manuscript is in preparation.</li>
+          <li>A self-directed second project, the composition-conditional audit of gastric-cancer signatures described under Build, is paused while this work takes priority.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="role" id="r-deepchain" data-reveal>
+      <div class="side">
+        <span class="no">3.2</span>
+        <h3 class="org">Deep Chain Lab</h3>
+        <p class="mentor">Fairleigh Dickinson University<br>Dr. Avimanyou Vatsa</p>
+        <span class="span label">Since 2025</span>
+      </div>
+      <div class="body">
+        <span class="label sage">Research Intern</span>
+        <p class="focus">Melanoma survivorship and immunotherapy complications</p>
+        <ul class="hang">
+          <li>Studying how melanoma survivors cope after treatment, including fear of recurrence, treatment anxiety, and long-term quality of life.</li>
+          <li>Characterizing neurologic and cardiovascular adverse events in patients treated with immune checkpoint inhibitors, across <span class="nw">PD-1/PD-L1</span> and <span class="nw">CTLA-4</span> agents.</li>
+          <li>Reading clinical literature and outcome data for patterns in immunotherapy toxicity affecting the heart and nervous system.</li>
+          <li>Applying clustering and other machine learning methods to patient narratives and sentiment data, moving past clinical metrics toward what survivors actually report experiencing.</li>
+          <li>Three of the four papers above come from this work, two of them presented at IEEE conferences in 2026.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="role" id="r-cognigenics" data-reveal>
+      <div class="side">
+        <span class="no">3.3</span>
+        <h3 class="org">Cognigenics</h3>
+        <p class="mentor">Dr. Troy Rohn<br>Boise State University</p>
+        <span class="span label">2025</span>
+      </div>
+      <div class="body">
+        <span class="label sage">Research Intern</span>
+        <p class="focus">Alzheimer’s disease and serotonergic systems</p>
+        <ul class="hang">
+          <li>Ran analysis in Python on Alzheimer’s Disease Neuroimaging Initiative (ADNI) data, testing correlations between cognitive decline and neuropsychiatric symptoms.</li>
+          <li>Used Pearson correlations across anxiety severity (NPI-A), global cognition (MMSE), and serotonergic genotype variants (HTR2A rs6313, SLC6A4 rs25531).</li>
+          <li>Contributed to translational work supporting clinical evaluation of the <span class="nw">Cog-201</span> gene therapy, and coauthored the resulting Genomic Psychiatry paper.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="role" id="r-rosetta" data-reveal>
+      <div class="side">
+        <span class="no">3.4</span>
+        <h3 class="org">Rosetta Institute of Biomedical Research</h3>
+        <p class="mentor">Hosted at Columbia University</p>
+        <span class="span label">2025</span>
+      </div>
+      <div class="body">
+        <span class="label sage">Research Program Participant</span>
+        <p class="focus">Neuroscience program</p>
+        <ul class="hang">
+          <li>A month-long program in July 2025 on brain science and biomedical research methods.</li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================================================================
+     04 BUILD
+     ================================================================ -->
+<section class="sec wrap" id="build" aria-labelledby="build-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">04</span>Build</p>
+    <h2 class="h2" id="build-h">Projects of <em>my own</em></h2>
+    <p class="dek">Self-directed work, with its status stated the same way as the papers, including for a project that is paused.</p>
+  </header>
+
+  <ol>
+    <li class="entry project" id="r-ccpsa" data-reveal>
+      <div class="side">
+        <span class="no">4.1</span>
+        <span class="label sage">Computational genomics · self-directed</span>
+        <ol class="rail" aria-label="Progress"><li class="ok"><span class="st">Protocol</span><span class="dt">Version 2.0</span></li><li class="ok"><span class="st">Revised</span><span class="dt">After external feedback</span></li><li class="ok"><span class="st">Drafted</span><span class="dt">Short manuscript</span></li><li><span class="st">Analysis</span><span class="dt">Not started</span></li></ol>
+        <span class="rail-note">Paused</span>
+        <p class="rail-cap">Paused while the surgical work takes priority. No patient cohort has been analyzed.</p>
+      </div>
+      <div class="body">
+        <h3 class="p-title">Composition-conditional prognostic signature audit</h3>
+        <p class="summary">Published gene signatures predict survival in gastric cancer, but a tumor sample is a mixture of malignant, fibroblast, immune, and endothelial cells, so a score can rise because the mixture shifted rather than because any cancer cell changed state. The closest prior audit found eleven published EMT and stemness signatures to be dominated by stromal signal, and never examined gastric cancer. Gastric is the right place to extend it, since it is not a proliferation-informative cancer, which leaves composition as the decisive alternative, and its clinically used mesenchymal subtype genuinely carries both more stroma and EMT-shifted cancer cells at once. The estimand is therefore the signature’s hazard coefficient written as a curve over composition rather than as a single number, and that curve is then used to explain why such coefficients fail to transport between cohorts.</p>
+        <ul class="hang">
+          <li>A cohort-stratified Cox model in which the signature coefficient varies over composition, alongside clinical covariates and a proliferation term, specified for TCGA-STAD and the ACRG cohort.</li>
+          <li>A signature registry fixed in advance and never refit, covering the Kreis eleven-panel set, the ACRG 71-gene set, Hallmark EMT, and lineage-identity sets.</li>
+          <li>An M0 to M4 model ladder, with incremental information over a composition-only model as the primary test and composition dependence of the coefficient as the secondary one.</li>
+          <li>A third cohort sealed for a single-pass confirmation, three-way leave-one-cohort-out validation for transport, and a gene-level deletion audit against size-matched random sets as falsification.</li>
+        </ul>
+        <ul class="stack" aria-label="Stack">
+          <li>R</li><li>Python</li><li>Survival analysis</li><li>Deconvolution</li>
+        </ul>
+        <div class="mores">
+          <details class="more">
+            <summary>What it took to learn <span class="ct">Five things</span></summary>
+            <div class="more-body">
+              <ul class="hang">
+                <li>Compositional data analysis, covering the simplex, log-ratio geometry, and why the constraint breaks ordinary regression.</li>
+                <li>Varying-coefficient models and penalized splines, including how the penalty matrix trades smoothness against fit.</li>
+                <li>Non-collapsibility of the hazard ratio, and standardized absolute risk and restricted mean survival time as the scale that survives it.</li>
+                <li>Deconvolution as constrained least squares, and attenuation bias when a covariate is itself an estimate.</li>
+                <li>Where the field’s ceiling sits, so the claim could be sized against it rather than against a leaderboard.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="more">
+            <summary>Method notes <span class="ct">Seven</span></summary>
+            <div class="more-body">
+              <ol class="notes">
+                <li><span class="k">Compositions are not vectors in the ordinary sense</span><span class="b">A composition lives on a simplex, four fractions constrained to sum to one, so the coordinates are not free and ordinary regression on them is ill-posed. The model works in isometric log-ratio coordinates, z equal to V transpose times the log of pi, where V is an orthonormal contrast basis for the plane orthogonal to the all-ones direction. Zeros have to be replaced before the logarithm, which is a modeling decision rather than a formatting one.</span></li>
+                <li><span class="k">The varying coefficient compiles into feature crosses</span><span class="b">Letting the coefficient vary over composition is not a second model bolted onto the first. Writing beta as a spline in the log-ratio coordinates turns the term into products of the signature score with each basis function, so a varying-coefficient Cox fit is an ordinary Cox fit on a wider design matrix. The basis is centered and QR-conditioned, because the raw crosses are badly scaled.</span></li>
+                <li><span class="k">The penalty is a quadratic form, and it has to be</span><span class="b">The spline is fitted against a roughness penalty, lambda times theta transpose Omega theta, so the coefficient curve stays smooth instead of chasing a handful of events. Against an events-per-parameter budget of roughly ten to fifteen, that penalty is what keeps the model estimable at all.</span></li>
+                <li><span class="k">Inference on a curve, not on a number</span><span class="b">A varying coefficient needs a simultaneous band rather than pointwise error bars, built by the delta method from a transpose Sigma a across the evaluation grid, with curvature summarized as the integral of the squared second derivative. Nesting is tested by likelihood ratio, which is exactly why a ridge-penalized fit is never allowed into the test.</span></li>
+                <li><span class="k">Composition is estimated, not observed</span><span class="b">The mixture fractions come from a non-negative least squares fit of bulk expression against a single-cell reference, run through two deconvolution methods plus a methylation-based one so the composition estimate is not a single point of failure. Variance inflation is checked directly, where an exact dependency surfaces as an infinite factor rather than merely a large one.</span></li>
+                <li><span class="k">A ceiling that calibrates the claim</span><span class="b">Large re-evaluations of published signatures find concordance plateauing near 0.80 whatever the algorithm, and surrogate gene sets with unrelated or even opposite biology match published signatures on performance. Both facts are stated up front, because together they bound what any integrated model here could honestly promise, and they are why the question is about meaning rather than leaderboard position.</span></li>
+                <li><span class="k">Two traps, written down before the data</span><span class="b">Measurement error in the composition estimate attenuates the coefficient by a signal-to-noise factor, so a flat curve can mean no effect or a noisy sensor, and those two have to be told apart. Separately, the hazard ratio is non-collapsible, so a coefficient can move under adjustment with no confounding present at all, which is why transport is judged on standardized absolute risk and restricted mean survival time rather than on the coefficient itself.</span></li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </div>
+    </li>
+
+    <li class="entry project" id="r-tb" data-reveal>
+      <div class="side">
+        <span class="no">4.2</span>
+        <span class="label sage">Machine learning for global health · independent</span>
+        <span class="span label">2024</span>
+      </div>
+      <div class="body">
+        <h3 class="p-title">Tuberculosis outcome prediction</h3>
+        <p class="summary">A supervised classifier for tuberculosis treatment outcomes in resource-limited health systems, trained on surveillance data from the World Health Organization’s global tuberculosis program.</p>
+        <ul class="hang">
+          <li>Built preprocessing pipelines for missing-value imputation, categorical encoding, and feature normalization across messy multi-country data.</li>
+          <li>Engineered clinically interpretable predictors from demographic and treatment-regimen fields.</li>
+          <li>Tuned hyperparameters under cross-validation rather than a single held-out split.</li>
+        </ul>
+        <ul class="stack" aria-label="Stack">
+          <li>Python</li><li>pandas</li><li>scikit-learn</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="entry project" id="r-tcga" data-reveal>
+      <div class="side">
+        <span class="no">4.3</span>
+        <span class="label sage">Computational biology and deep learning · independent</span>
+        <span class="span label">2024</span>
+      </div>
+      <div class="body">
+        <h3 class="p-title">Gene expression cancer classifier</h3>
+        <p class="summary">A deep neural network that classifies cancer type from bulk RNA-seq profiles in The Cancer Genome Atlas (TCGA), where each tumor sample is described by more than 20,000 genes.</p>
+        <ul class="hang">
+          <li>Built the full pipeline, from raw count normalization and batch-effect correction to PCA over the high-dimensional gene space.</li>
+          <li>Trained a multi-layer network with dropout and early stopping to hold back overfitting on limited samples.</li>
+          <li>Evaluated with stratified k-fold cross-validation and read feature importance for candidate stratification biomarkers.</li>
+        </ul>
+        <ul class="stack" aria-label="Stack">
+          <li>Python</li><li>TensorFlow</li><li>scikit-learn</li><li>NumPy</li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================================================================
+     05 COMMUNITY
+     ================================================================ -->
+<section class="sec wrap" id="community" aria-labelledby="community-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">05</span>Community</p>
+    <h2 class="h2" id="community-h">Outside <em>the lab</em></h2>
+    <p class="dek">Six commitments outside research, four of which have run through all of high school.</p>
+  </header>
+
+  <ol>
+    <li class="item" id="r-enable" data-reveal>
+      <div class="side">
+        <span class="no">5.1</span>
+        <h3 class="i-title">Founding member</h3>
+        <p class="i-org"><span class="nw">ENABLE-3D</span> Prosthetics Club</p>
+        <span class="span label">Since 2025</span>
+      </div>
+      <div class="body">
+        <p>I joined during the club’s first year. We 3D-print below-elbow prosthetic hands through the <span class="nw">e-NABLE</span> volunteer network, and my part is the fitting, scaling each hand to the recipient’s measurements and setting the cord tension so the fingers can both open and hold. Our first recipient, in Pakistan, lifted a green plastic cup with his new hand over a video call with the club.</p>
+        <p>I also made sure the club’s finished hand models were saved, so the students who come after us will not have to rebuild them from scratch.</p>
+      </div>
+    </li>
+
+    <li class="item" id="r-ftc" data-reveal>
+      <div class="side">
+        <span class="no">5.2</span>
+        <h3 class="i-title">Coder and mentor</h3>
+        <p class="i-org">FIRST Tech Challenge, Collegiate School Robotics</p>
+        <span class="span label">Since 2025</span>
+      </div>
+      <div class="body">
+        <p>I was one of the two coders on Dutchmen Blue in the team’s first competitive season, 2025 to 2026. As a senior I code for the main team and mentor the underclassmen on Dutchmen Orange.</p>
+        <div class="honors">
+          <span class="label">Team honors, 2025 to 2026</span>
+          <ul>
+            <li><span class="r">Champions</span><span class="e">NYC Super Qualifier</span></li>
+            <li><span class="r">Eighth place</span><span class="e">NYC Championship</span></li>
+            <li><span class="r">Semifinalists, top six in division</span><span class="e">Canada Cup</span></li>
+            <li><span class="r">Inspire, Control, Design, and Innovate awards</span><span class="e">FIRST Tech Challenge</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="item" id="r-scioly" data-reveal>
+      <div class="side">
+        <span class="no">5.3</span>
+        <h3 class="i-title">Competitor</h3>
+        <p class="i-org">Science Olympiad, autonomous vehicle events</p>
+        <span class="span label">Since 2023</span>
+      </div>
+      <div class="body">
+        <p>I design, program, and calibrate autonomous vehicles for precision navigation events, and compete in circuit analysis.</p>
+        <div class="honors">
+          <span class="label">Selected results</span>
+          <ul>
+            <li><span class="r">Second place</span><span class="e">Yale Invitational, Robot Tour</span></li>
+            <li><span class="r">Second place</span><span class="e">Capital Region Invitational, Robot Tour</span></li>
+            <li><span class="r">Fifth place</span><span class="e">Capital Region Invitational, Circuit Lab</span></li>
+            <li><span class="r">Fifth place</span><span class="e">Bronx Science Regional, Electric Vehicle</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <li class="item" id="r-cs55" data-reveal>
+      <div class="side">
+        <span class="no">5.4</span>
+        <h3 class="i-title">Volunteer math tutor</h3>
+        <p class="i-org">CS55 School, Bronx</p>
+        <span class="span label">Since 2023</span>
+      </div>
+      <div class="body">
+        <p>Every week I teach supplementary mathematics to fifth graders, and I help with the school’s annual donation drives, which supply essentials to families in the surrounding community. One student learned the Pythagorean theorem from the diagonal of a soccer field, rebuilt the 3-4-5 triangle on his own, and came back the next week asking what was next.</p>
+      </div>
+    </li>
+
+    <li class="item" id="r-gita" data-reveal>
+      <div class="side">
+        <span class="no">5.5</span>
+        <h3 class="i-title">Gita tutor</h3>
+        <p class="i-org">Bangladesh Hindu Mandir</p>
+        <span class="span label">Since 2018</span>
+      </div>
+      <div class="body">
+        <p>I started as a student in the temple’s Bhagavad Gita program and moved up to teaching. I now run weekly sessions for the younger students on the verses, Sanskrit chanting, and the context behind them.</p>
+      </div>
+    </li>
+
+    <li class="item" id="r-music" data-reveal>
+      <div class="side">
+        <span class="no">5.6</span>
+        <h3 class="i-title">Pianist and vocalist</h3>
+        <p class="i-org">Piano and Western classical voice</p>
+        <span class="span label">Since 2015</span>
+      </div>
+      <div class="body">
+        <p>Eleven years of formal training in piano and Western classical voice, with performances in student recitals.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================================================================
+     06 CONTACT
+     ================================================================ -->
+<section class="sec wrap" id="contact" aria-labelledby="contact-h">
+  <header class="sec-head" data-reveal>
+    <p class="sec-kick label"><span class="n">06</span>Contact</p>
+    <h2 class="h2" id="contact-h">Where to <em>find me</em></h2>
+    <p class="dek">Email is the fastest way to reach me.</p>
+  </header>
+
+  <dl class="contact" data-reveal>
+    <div>
+      <dt>Email</dt>
+      <dd><a class="ln" href="mailto:srishtijit@gmail.com">srishtijit@gmail.com</a></dd>
+      <dd><button class="copy" type="button" data-copy="srishtijit@gmail.com" aria-label="Copy email address">Copy</button></dd>
+    </div>
+    <div>
+      <dt>GitHub</dt>
+      <dd><a class="ln" href="https://github.com/THEESMARTONE" target="_blank" rel="me noopener noreferrer">github.com/THEESMARTONE</a></dd>
+    </div>
+  </dl>
+  <p class="sr-only" id="copy-status" aria-live="polite"></p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Updated October 2026</p>
+    <p>Set in Cormorant Garamond and Plus Jakarta Sans</p>
+    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var doc = document, root = doc.documentElement;
+  var motion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  function reduced() { return !!(motion && motion.matches); }
+
+  /* ---------- scroll spy: which section is under the reading line ---------- */
+  var links = [].slice.call(doc.querySelectorAll(".nav a[href^='#']"));
+  var sections = links.map(function (a) { return doc.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+  var lastId = sections.length ? sections[sections.length - 1].id : null;
+  var current;
+
+  function keepInView(a) {
+    var li = a.parentNode, list = li && li.parentNode;
+    if (!list || list.scrollWidth <= list.clientWidth + 1) return;
+    var left = li.offsetLeft - (list.clientWidth - li.offsetWidth) / 2;
+    try { list.scrollTo({ left: Math.max(0, left), behavior: reduced() ? "auto" : "smooth" }); }
+    catch (e) { list.scrollLeft = Math.max(0, left); }
+  }
+
+  function setActive(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach(function (a) {
+      if (id && a.getAttribute("href") === "#" + id) { a.setAttribute("aria-current", "true"); keepInView(a); }
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) setActive(e.target.id === "top" ? null : e.target.id);
+      });
+    }, { rootMargin: "-38% 0px -58% 0px" });
+    sections.forEach(function (s) { spy.observe(s); });
+    var hero = doc.getElementById("top");
+    if (hero) spy.observe(hero);
+  }
+
+  /* ---------- masthead plate, name, and reading progress ---------- */
+  var mast = doc.getElementById("mast");
+  var fill = doc.querySelector(".progress i");
+  var name = doc.querySelector(".name");
+  var markAt = 0, queued = false;
+
+  function update() {
+    queued = false;
+    var y = window.pageYOffset || root.scrollTop || 0;
+    var max = Math.max(1, root.scrollHeight - window.innerHeight);
+    if (fill) fill.style.transform = "scaleX(" + Math.min(1, Math.max(0, y / max)).toFixed(4) + ")";
+    if (mast) {
+      mast.classList.toggle("is-stuck", y > 4);
+      mast.classList.toggle("show-mark", y > markAt);
+    }
+    if (lastId && max - y < 2 && y > 0) setActive(lastId);
+  }
+  function measure() {
+    if (name && mast) markAt = name.getBoundingClientRect().bottom + (window.pageYOffset || 0) - mast.offsetHeight;
+    update();
+  }
+  window.addEventListener("scroll", function () {
+    if (!queued) { queued = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener("resize", measure);
+  window.addEventListener("load", measure);
+  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(measure);
+  measure();
+
+  /* ---------- records rise into place as they arrive ---------- */
+  if (root.classList.contains("reveal") && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.01 });
+    [].forEach.call(doc.querySelectorAll("[data-reveal]"), function (el) { io.observe(el); });
+    window.__revealReady = true;
+  } else {
+    root.classList.remove("reveal");
+  }
+
+  /* ---------- copy the email address ---------- */
+  var copy = doc.querySelector("[data-copy]"), live = doc.getElementById("copy-status"), timer;
+  if (copy) copy.addEventListener("click", function () {
+    var text = copy.getAttribute("data-copy");
+    function ok() {
+      copy.textContent = "Copied"; copy.classList.add("done");
+      if (live) live.textContent = "Email address copied";
+      clearTimeout(timer);
+      timer = setTimeout(function () { copy.textContent = "Copy"; copy.classList.remove("done"); if (live) live.textContent = ""; }, 2000);
+    }
+    function legacy() {
+      var t = doc.createElement("textarea");
+      t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.top = "0"; t.style.opacity = "0";
+      doc.body.appendChild(t); t.select();
+      try { if (doc.execCommand("copy")) ok(); } catch (e) {}
+      doc.body.removeChild(t);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(ok, legacy);
+    else legacy();
+  });
+
+  /* ---------- print: open every disclosure, then put them back ---------- */
+  var opened = [];
+  window.addEventListener("beforeprint", function () {
+    root.classList.remove("reveal");
+    [].forEach.call(doc.querySelectorAll("details:not([open])"), function (d) { d.setAttribute("open", ""); opened.push(d); });
+  });
+  window.addEventListener("afterprint", function () {
+    opened.forEach(function (d) { d.removeAttribute("open"); });
+    opened = [];
+  });
+})();
+</script>
+</body>
+</html>
